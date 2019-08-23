@@ -1,0 +1,4 @@
+﻿CREATE TABLE Category(CategoryID INT NOT NULL PRIMARY KEY, 
+			Name VARCHAR(255),
+			CatDescr VARCHAR(255));
+
