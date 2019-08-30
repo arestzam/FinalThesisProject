@@ -1,0 +1,427 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C95DF0B2-A023-48CD-BF78-0AA325D53034}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MarketStore</RootNamespace>
+    <AssemblyName>MarketStore</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\MarketStore.mdf" />
+    <Content Include="App_Data\MarketStore_log.ldf">
+      <DependentUpon>MarketStore.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\AlproCoconutAlmond.jpg" />
+    <Content Include="Content\Images\AlproCoconutChocolate.jpg" />
+    <Content Include="Content\Images\AlproCoconutProfessionals.jpg" />
+    <Content Include="Content\Images\AlproCoconutUnsweetened.jpg" />
+    <Content Include="Content\Images\AlproOrganicAlmond.jpg" />
+    <Content Include="Content\Images\AmateurPhotographer.jpg" />
+    <Content Include="Content\Images\AptamilBabyMilk200ml.jpg" />
+    <Content Include="Content\Images\AptamilLactoseFree400g.jpg" />
+    <Content Include="Content\Images\AquafreshToothbrush.jpg" />
+    <Content Include="Content\Images\AvonmoreCookingCream.jpg" />
+    <Content Include="Content\Images\AvonmoreFreshMilk2.75l.jpg" />
+    <Content Include="Content\Images\AvonmoreFreshMilk500ml.jpg" />
+    <Content Include="Content\Images\AvonmoreLactoFreeMilk1l.jpg" />
+    <Content Include="Content\Images\AvonmoreLactoseFreeMilk.jpg" />
+    <Content Include="Content\Images\AvonmoreLightMilk2l.jpg" />
+    <Content Include="Content\Images\AvonmoreLowFatMilk.jpg" />
+    <Content Include="Content\Images\AvonmoreLowFatSuperMilk.jpg" />
+    <Content Include="Content\Images\AvonmoreMilk2l.jpg" />
+    <Content Include="Content\Images\AvonmoreProteinMilk1l.jpg" />
+    <Content Include="Content\Images\AvonmoreProteinMilk1l.png" />
+    <Content Include="Content\Images\AvonmoreProteinMilk500.jpg" />
+    <Content Include="Content\Images\AvonmoreVanillaMilk.jpg" />
+    <Content Include="Content\Images\AvonmoreWhippedCream.jpg" />
+    <Content Include="Content\Images\AvonmoreWholeSuperMilk1.75l.jpg" />
+    <Content Include="Content\Images\Bakery1.jpg" />
+    <Content Include="Content\Images\Bakery2.jpg" />
+    <Content Include="Content\Images\BarrysGoldBlendTea250g.jpg" />
+    <Content Include="Content\Images\BarrysGoldTeaBags160pack500g.jpg" />
+    <Content Include="Content\Images\BarrysTeaGold80Teabags250g.jpg" />
+    <Content Include="Content\Images\BeamishDraught500ml4pack.jpg" />
+    <Content Include="Content\Images\BellaMag.jpg" />
+    <Content Include="Content\Images\BenAndJerryPhishIceCream500ml.jpg" />
+    <Content Include="Content\Images\Berrols.jpg" />
+    <Content Include="Content\Images\BrennansHalfPanPremium.jpg" />
+    <Content Include="Content\Images\BrennansHalfWholemealBread400g.jpg" />
+    <Content Include="Content\Images\BrennansSlicedBatchLoaf800g.jpg" />
+    <Content Include="Content\Images\BrennansSlicedPanWhite.jpg" />
+    <Content Include="Content\Images\BrennansWholegrainSlicedBread800g.jpg" />
+    <Content Include="Content\Images\BudweiserBudvar500.jpg" />
+    <Content Include="Content\Images\Bulmers20Pack300.jpg" />
+    <Content Include="Content\Images\BulmersOriginal6X33clLongNeck.jpg" />
+    <Content Include="Content\Images\BulmersOriginalCider500.jpg" />
+    <Content Include="Content\Images\ButterBriocheRolls8pack.jpg" />
+    <Content Include="Content\Images\Carousel5packCars.jpg" />
+    <Content Include="Content\Images\CarrollsNumberOne2O.jpg" />
+    <Content Include="Content\Images\CiabattaRolls4pack.jpg" />
+    <Content Include="Content\Images\ColgateCavityToothpaste100.jpg" />
+    <Content Include="Content\Images\ColgatePlaxCoolMintMouthwash500ml.jpg" />
+    <Content Include="Content\Images\ColgateToothpaste100.jpg" />
+    <Content Include="Content\Images\ColgateTotalOriginalCareToothpaste125ml.jpg" />
+    <Content Include="Content\Images\ColgateWhiteningToothpaste100ml.jpg" />
+    <Content Include="Content\Images\comments pic1.jpg" />
+    <Content Include="Content\Images\complaints pic1.jpg" />
+    <Content Include="Content\Images\CoorsLight20PackBottles.jpg" />
+    <Content Include="Content\Images\DailyMirrorNewspaper.jpg" />
+    <Content Include="Content\Images\DuracellBatteries.jpg" />
+    <Content Include="Content\Images\EggsFreeRange6pack.jpg" />
+    <Content Include="Content\Images\FloraOriginal.jpg" />
+    <Content Include="Content\Images\GateauxChocolate.jpg" />
+    <Content Include="Content\Images\GuinnessDraughtCan500ml.jpg" />
+    <Content Include="Content\Images\GuinnessDraughtCan8X500.jpg" />
+    <Content Include="Content\Images\GuinnessExtraStout.jpg" />
+    <Content Include="Content\Images\HbChocolateIceVanilla90ml.jpg" />
+    <Content Include="Content\Images\Heineken8x50cl.jpg" />
+    <Content Include="Content\Images\HeinekenAlcoholFreeBeer4X330.jpg" />
+    <Content Include="Content\Images\HeinekenBottles6x330ml.jpg" />
+    <Content Include="Content\Images\HeinekenCan500ml.jpg" />
+    <Content Include="Content\Images\HomemadeBaguettes.jpg" />
+    <Content Include="Content\Images\HotDogRolls.jpg" />
+    <Content Include="Content\Images\HotWheelsCar.jpg" />
+    <Content Include="Content\Images\HovisGranaryMedium.jpg" />
+    <Content Include="Content\Images\HovisGranaryWholeBread.jpg" />
+    <Content Include="Content\Images\ImpulseBodymist150.jpg" />
+    <Content Include="Content\Images\IrishDailyStarNewspaper.jpg" />
+    <Content Include="Content\Images\IrishPride.jpg" />
+    <Content Include="Content\Images\JerryFoodsDairymaidPremium.jpg" />
+    <Content Include="Content\Images\JohnPlayerBlue2O.jpg" />
+    <Content Include="Content\Images\Johnson%27sKidsNoMoreTanglesConditionerSpray200Ml.jpg" />
+    <Content Include="Content\Images\JohnsonsBabyRelaxingShampoo500ml.jpg" />
+    <Content Include="Content\Images\JohnsonsBabyShampoo500ml.jpg" />
+    <Content Include="Content\Images\KerrygoldButter500g.jpg" />
+    <Content Include="Content\Images\KerrygoldCreameryButter454g.jpg" />
+    <Content Include="Content\Images\KokoOriginalMilk.jpg" />
+    <Content Include="Content\Images\KokoSuperMilk.jpg" />
+    <Content Include="Content\Images\KokoUnsweetedMilk.jpg" />
+    <Content Include="Content\Images\KopparbergMixedFruitCider500.jpg" />
+    <Content Include="Content\Images\KopparbergStrLimeCan500.jpg" />
+    <Content Include="Content\Images\L%27orealElvineHairShampoo400.jpg" />
+    <Content Include="Content\Images\LegoCastle.jpg" />
+    <Content Include="Content\Images\LegoMonasteryTraining.jpg" />
+    <Content Include="Content\Images\ListerineMouthwashMint500.jpg" />
+    <Content Include="Content\Images\LorealKidsHairShampoo250.jpg" />
+    <Content Include="Content\Images\LynxSprayDeodorant150.jpg" />
+    <Content Include="Content\Images\Lyon%27sOriginal80Teabags232g.jpg" />
+    <Content Include="Content\Images\MarieClaireMagazine.jpg" />
+    <Content Include="Content\Images\MaxwellHouseCoffee100g.jpg" />
+    <Content Include="Content\Images\MitchumDeodorant.jpg" />
+    <Content Include="Content\Images\MoojuMilkBanana750.jpg" />
+    <Content Include="Content\Images\MoojuMilkChocolate750.jpg" />
+    <Content Include="Content\Images\MoojuMilkStrawberry750.jpg" />
+    <Content Include="Content\Images\MurphysDraughtIrishStout6X500.jpg" />
+    <Content Include="Content\Images\NescafeAzeraCoffee60g.jpg" />
+    <Content Include="Content\Images\NescafeGoldBlendInstantCoffee150g.jpg" />
+    <Content Include="Content\Images\NescafeGoldCappuccinoCoffee8S.jpg" />
+    <Content Include="Content\Images\NescafeIrishCreamLatteCoffee8x22g.jpg" />
+    <Content Include="Content\Images\NescafeLatteCaramelCoffee8x17g.jpg" />
+    <Content Include="Content\Images\Nivea2in1CleanserAndToner200ml.jpg" />
+    <Content Include="Content\Images\NiveaDeodorant150.jpg" />
+    <Content Include="Content\Images\Omega3Eggs.jpg" />
+    <Content Include="Content\Images\Oral-BDentalFloss50.jpg" />
+    <Content Include="Content\Images\PampersBabyDry3Pack50nappies.jpg" />
+    <Content Include="Content\Images\PampersMats12pack.jpg" />
+    <Content Include="Content\Images\PaperMatePens.jpg" />
+    <Content Include="Content\Images\PaulanerHefeWeissbier500.jpg" />
+    <Content Include="Content\Images\PedigreeBeefVegetableDryFood2.6kg.jpg" />
+    <Content Include="Content\Images\PedigreeCanTinnedFood12x385g.jpg" />
+    <Content Include="Content\Images\PedigreeLargeDogDentasticChews28sticks.jpg" />
+    <Content Include="Content\Images\PilgrimsChoiceExtraMatureChedderCheese350g.jpg" />
+    <Content Include="Content\Images\PilgrimsChoiceExtraMatureChedderCheese550g.jpg" />
+    <Content Include="Content\Images\PilsnerUrquell500.jpg" />
+    <Content Include="Content\Images\PrittGlue.jpg" />
+    <Content Include="Content\Images\PuffPastryAppleTart.jpg" />
+    <Content Include="Content\Images\RealPeopleMag.jpg" />
+    <Content Include="Content\Images\RedBullEnergyDrink4X250ml.jpg" />
+    <Content Include="Content\Images\RedTravelEdition.jpg" />
+    <Content Include="Content\Images\RitzCan500.jpg" />
+    <Content Include="Content\Images\RothmansKingSizeOriginal2O.jpg" />
+    <Content Include="Content\Images\RusticWhiteBaguette.jpg" />
+    <Content Include="Content\Images\SchneiderWeisseOriginal500.jpg" />
+    <Content Include="Content\Images\Sellotape.jpg" />
+    <Content Include="Content\Images\SierraNevadaPaleAle350.jpg" />
+    <Content Include="Content\Images\SolusBulb.jpg" />
+    <Content Include="Content\Images\SureRollOnDeodorant50.jpg" />
+    <Content Include="Content\Images\Tesco Antibacterial Cleaner Spray 500Ml.jpg" />
+    <Content Include="Content\Images\Tesco Thick Bleach 24 Hour Citrus750ml.jpg" />
+    <Content Include="Content\Images\Tesco3DLeafNewCarAirFreshener.jpg" />
+    <Content Include="Content\Images\TescoA4Dividers10.jpg" />
+    <Content Include="Content\Images\TescoAluminiumFryingPan30cm.jpg" />
+    <Content Include="Content\Images\TescoAluminiumSaucepan20cm.jpg" />
+    <Content Include="Content\Images\TescoAncientGrainRoll.jpg" />
+    <Content Include="Content\Images\TescoAntibacterialCleanerSpray500Ml.jpg" />
+    <Content Include="Content\Images\TescoBaguettes4pack.jpg" />
+    <Content Include="Content\Images\TescoBathroomCleanerSpray500ml.jpg" />
+    <Content Include="Content\Images\TescoBrownSlicedBread800g.jpg" />
+    <Content Include="Content\Images\TescoButterChickenKievs500g.jpg" />
+    <Content Include="Content\Images\TescoChickenBreastFillets300g.jpg" />
+    <Content Include="Content\Images\TescoChickenSteaks380g.jpg" />
+    <Content Include="Content\Images\TescoChocolateSandwich8x90ml.jpg" />
+    <Content Include="Content\Images\TescoClassicInstantCoffee200g.jpg" />
+    <Content Include="Content\Images\TescoCodFilletFishFingers400g.jpg" />
+    <Content Include="Content\Images\TescoCodFillets500g.jpg" />
+    <Content Include="Content\Images\TescoDemiBaguette140g.jpg" />
+    <Content Include="Content\Images\TescoFittedSheetNavyDouble.jpg" />
+    <Content Include="Content\Images\TescoFreshWholeMilk2lt.jpg" />
+    <Content Include="Content\Images\TescoFriedWings1kg.jpg" />
+    <Content Include="Content\Images\TescoFullFatMilk3lt.jpg" />
+    <Content Include="Content\Images\TescoGoldDecaffeinatedInstantCoffee100g.jpg" />
+    <Content Include="Content\Images\TescoGoldInstantCoffee100g.jpg" />
+    <Content Include="Content\Images\TescoGratedMozzarella250g.jpg" />
+    <Content Include="Content\Images\TescoKidsToothpaste75.jpg" />
+    <Content Include="Content\Images\TescoLargeRawKingPrawns170g.jpg" />
+    <Content Include="Content\Images\TescoLimescaleRemove750ml.jpg" />
+    <Content Include="Content\Images\TescoLimescaleTablets40pack.jpg" />
+    <Content Include="Content\Images\TescoLowFatMilk2lt.jpg" />
+    <Content Include="Content\Images\TescoLowFatMilk3lt.jpg" />
+    <Content Include="Content\Images\TescoOliveSpread500g.jpg" />
+    <Content Include="Content\Images\TescoSyntheticOil4L.jpg" />
+    <Content Include="Content\Images\TescoTailBreadedScampi280g.jpg" />
+    <Content Include="Content\Images\TescoThickBleach24HourCitrus2ltr.jpg" />
+    <Content Include="Content\Images\TescoThickBleach24HourCitrus750ml.jpg" />
+    <Content Include="Content\Images\TescoThickBleach750ml.jpg" />
+    <Content Include="Content\Images\TescoWholemealBread.jpg" />
+    <Content Include="Content\Images\TescoWindowCleanerSpray500ml.jpg" />
+    <Content Include="Content\Images\ThankYou.jpg" />
+    <Content Include="Content\Images\Tiger500.jpg" />
+    <Content Include="Content\Images\TresemmeConditioner900.jpg" />
+    <Content Include="Content\Images\TresemmeDeepShampoo900.jpg" />
+    <Content Include="Content\Images\TresemmeFastDry2000.jpg" />
+    <Content Include="Content\Images\VarianStripMopRefill.jpg" />
+    <Content Include="Content\Images\VaselineOrigPetroJelly.jpg" />
+    <Content Include="Content\Images\VaselinePetroleumJelly100ml.jpg" />
+    <Content Include="Content\Images\WhiskasCatMilk3x200ml.jpg" />
+    <Content Include="Content\Images\WhiskasFishTinnedCatFood6x390g.jpg" />
+    <Content Include="Content\Images\WhiskasMeatJellyCatFoodPouches12x100g.jpg" />
+    <Content Include="Content\Images\WhiskasPoultryCatFoodPouches.jpg" />
+    <Content Include="Content\Images\Yours.jpg" />
+    <Content Include="Content\Images\ZipBbqTray.jpg" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Models\RetrieveData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RetrieveData.edmx</DependentUpon>
+      <LastGenOutput>RetrieveData.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RetrieveData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RetrieveData.edmx</DependentUpon>
+      <LastGenOutput>RetrieveData.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\RetrieveData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RetrieveData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RetrieveData.edmx.diagram">
+      <DependentUpon>RetrieveData.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CheckoutController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
+    <Compile Include="Controllers\StoreManagerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\MarketStoreEntities.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderDetails.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\RetrieveData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetrieveData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RetrieveData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetrieveData.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeedData.cs" />
+    <Compile Include="Models\ShoppingCart.cs" />
+    <Compile Include="Models\StoreData.cs" />
+    <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModels\ShoppingCartViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Views\Store\Details.cshtml" />
+    <Content Include="Views\Store\Browse.cshtml" />
+    <Content Include="Views\StoreManager\Index.cshtml" />
+    <Content Include="Views\Store\Index.cshtml" />
+    <Content Include="Views\ShoppingCart\CartSummary.cshtml" />
+    <Content Include="Views\Store\CategoryList.cshtml" />
+    <Content Include="Views\Checkout\ShopperAddressPaymentDetails.cshtml" />
+    <Content Include="Views\Checkout\CheckoutComplete.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\StoreManager\Details.cshtml" />
+    <Content Include="Views\StoreManager\Create.cshtml" />
+    <Content Include="Views\StoreManager\Delete.cshtml" />
+    <Content Include="Views\StoreManager\Edit.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>62937</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62937/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
